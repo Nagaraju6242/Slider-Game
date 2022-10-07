@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #34495e;
+	font-family: "Roboto", sans-serif;
+}
+
+header {
+	margin: 2rem 0;
+	text-align: center;
+	color: #fff;
+}
+
+.slider {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80vw;
+	height: 20px;
+	background-color: #e74c3c;
+	border: 1px solid #fff;
+	border-radius: 5px;
+}
+
+.pointer {
+	--speed: 5000ms;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 20px solid #d9d9d9;
+	position: absolute;
+	left: 0;
+	transform: translate(-50%, -50%);
+	animation: movePointer var(--speed) linear infinite alternate;
+	z-index: 2;
+}
+
+.spot {
+	width: 20%;
+	background-color: #2ecc71;
+	position: absolute;
+	height: 100%;
+}
+
+.mark {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #fbc531;
+	width: 10%;
+	max-width: 5px;
+}
+
+.score-container {
+	position: absolute;
+	right: 10%;
+	top: 20%;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+@keyframes movePointer {
+	0% {
+		left: 1%;
+	}
+	100% {
+		left: 99%;
+	}
+}
